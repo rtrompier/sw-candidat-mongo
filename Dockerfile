@@ -7,6 +7,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* 
   
 COPY data/users.json /users.json
+COPY data/posts.json /posts.json
+COPY data/comments.json /comments.json
 
 ENV MONGO_SERVER= MONGO_PORT=27017 MONGO_DATABASE=test
 
