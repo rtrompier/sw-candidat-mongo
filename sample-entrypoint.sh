@@ -23,9 +23,9 @@ fi
 
 echo "Importing sample datasets into $server"
 
-mongoimport --host $server --db $MONGO_DATABASE --collection users --drop --file /users.json
-mongoimport --host $server --db $MONGO_DATABASE --collection posts --drop --file /posts.json
-mongoimport --host $server --db $MONGO_DATABASE --collection comments --drop --file /comments.json
+mongoimport --host $server --db $MONGO_DATABASE --collection users --drop --file /users.json --jsonArray
+mongoimport --host $server --db $MONGO_DATABASE --collection posts --drop --file /posts.json --jsonArray
+mongoimport --host $server --db $MONGO_DATABASE --collection comments --drop --file /comments.json --jsonArray
 
 if $is_local; then
     # kill and re-run mongo, so we make sure we substitute the mongod process as the container PID 1, maybe a way around this?

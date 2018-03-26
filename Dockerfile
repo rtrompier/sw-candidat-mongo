@@ -14,3 +14,5 @@ ENV MONGO_SERVER= MONGO_PORT=27017 MONGO_DATABASE=test
 
 ADD sample-entrypoint.sh /examples/sample-entrypoint.sh
 ENTRYPOINT ["/examples/sample-entrypoint.sh"]
+
+EXPOSE 27017
